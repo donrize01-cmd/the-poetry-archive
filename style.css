@@ -1,0 +1,1315 @@
+/* =========================================================
+   THE POETRY ARCHIVE — CLEAN STYLESHEET
+   Rebuilt for Version 0.2.1
+========================================================= */
+
+/* =========================
+   1. RESET & GLOBAL TOKENS
+========================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --page-bg: #08080b;
+    --surface: #111014;
+    --surface-soft: #171419;
+    --text: #f4eeee;
+    --text-soft: #c1b8ba;
+    --text-muted: #998f92;
+    --nav-bg: rgba(8, 8, 11, 0.84);
+    --global-accent: #8c3545;
+    --global-accent-dark: #6e2b3d;
+    --global-line: #31272a;
+    --content-width: 1100px;
+    --reading-width: 950px;
+}
+
+html {
+    scroll-behavior: smooth;
+    background: var(--page-bg);
+    color-scheme: dark;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+
+    background: var(--page-bg);
+    color: var(--text);
+
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+a {
+    color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* =========================
+   2. COLLECTION THEME TOKENS
+========================= */
+
+.shattered-page {
+    --accent: #8c3545;
+    --accent-soft: #ba7b86;
+    --accent-dark: #6e2b3d;
+    --accent-glow: rgba(104, 31, 48, 0.24);
+    --page-theme-bg: #090a10;
+    --line-color: #342a2e;
+    --tagline-color: #c4b9bc;
+
+    background:
+        linear-gradient(
+            rgba(7, 8, 14, 0.88),
+            rgba(7, 8, 14, 0.97)
+        ),
+        var(--page-theme-bg);
+}
+
+.canary-page {
+    --accent: #c97838;
+    --accent-soft: #d99758;
+    --accent-dark: #8b431d;
+    --accent-glow: rgba(204, 94, 24, 0.25);
+    --page-theme-bg: #100805;
+    --line-color: #4c2d20;
+    --tagline-color: #ddc5ae;
+
+    background:
+        radial-gradient(
+            circle at 50% 15%,
+            rgba(80, 29, 10, 0.16),
+            transparent 55%
+        ),
+        var(--page-theme-bg);
+
+    background-attachment: fixed;
+}
+
+.lonely-page {
+    --accent: #6d8296;
+    --accent-soft: #9cb4ca;
+    --accent-dark: #425a70;
+    --accent-glow: rgba(92, 124, 154, 0.24);
+    --page-theme-bg: #090b0e;
+    --line-color: #314050;
+    --tagline-color: #bcc9d4;
+
+    background:
+        linear-gradient(
+            rgba(9, 11, 15, 0.94),
+            rgba(6, 7, 10, 0.99)
+        ),
+        var(--page-theme-bg);
+}
+
+.beach-page {
+    --accent: #b58c62;
+    --accent-soft: #d2b38f;
+    --accent-dark: #766047;
+    --accent-glow: rgba(221, 166, 98, 0.22);
+    --page-theme-bg: #0d1113;
+    --line-color: #4c4035;
+    --tagline-color: #d1c3b2;
+
+    background:
+        linear-gradient(
+            rgba(17, 18, 18, 0.9),
+            rgba(7, 10, 12, 0.98)
+        ),
+        var(--page-theme-bg);
+}
+
+/* =========================
+   3. NAVIGATION
+========================= */
+
+.site-nav {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 1000;
+
+    width: 100%;
+    padding: 18px 6%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    background: var(--nav-bg);
+    backdrop-filter: blur(12px);
+}
+
+.site-logo {
+    color: var(--text);
+
+    font-size: 1rem;
+    letter-spacing: 0.08rem;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-links a {
+    position: relative;
+
+    padding: 6px 0;
+
+    color: #bdb3b6;
+
+    font-size: 0.82rem;
+    letter-spacing: 0.08rem;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--accent, var(--global-accent));
+
+    transition: width 0.25s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* =========================
+   4. HOMEPAGE HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+    padding: 120px 20px 60px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(112, 29, 46, 0.25),
+            transparent 55%
+        ),
+        var(--page-bg);
+}
+
+.eyebrow {
+    margin: 0 0 12px;
+
+    color: var(--accent-soft, #ba7b86);
+
+    font-size: 0.85rem;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    max-width: 900px;
+    margin: 0;
+
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-weight: normal;
+    line-height: 1;
+}
+
+.tagline {
+    max-width: 650px;
+    margin: 28px 0;
+
+    color: #c9bfc1;
+
+    font-size: 1.15rem;
+    line-height: 1.8;
+    font-style: italic;
+}
+
+.enter-button,
+.collection-link {
+    display: inline-block;
+
+    padding: 14px 24px;
+
+    border: 1px solid var(--global-accent);
+
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 0.08rem;
+
+    transition:
+        background-color 0.25s ease,
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.enter-button:hover,
+.collection-link:hover {
+    background: var(--global-accent-dark);
+    transform: translateY(-2px);
+}
+
+/* =========================
+   5. HOMEPAGE CONTENT
+========================= */
+
+main {
+    width: 100%;
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 100px 24px;
+}
+
+.intro {
+    max-width: 700px;
+    margin-bottom: 50px;
+}
+
+.intro h2 {
+    margin-bottom: 12px;
+
+    font-size: 2.5rem;
+    font-weight: normal;
+}
+
+.intro p {
+    color: #bdb3b5;
+    line-height: 1.8;
+}
+
+/* =========================
+   6. COLLECTION TILES
+========================= */
+
+.collection-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.collection-card {
+    min-height: 420px;
+    padding: 38px;
+
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+
+    border: 1px solid var(--global-line);
+
+    background: var(--surface);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.collection-card:hover {
+    transform: translateY(-6px);
+}
+
+.collection-card h2 {
+    margin: 8px 0 16px;
+
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+.collection-card p {
+    color: var(--text-soft);
+    line-height: 1.7;
+}
+
+.collection-label,
+.collection-number {
+    margin: 0;
+
+    font-size: 0.75rem;
+    letter-spacing: 0.16rem;
+    text-transform: uppercase;
+}
+
+.collection-link {
+    align-self: end;
+    justify-self: start;
+
+    margin-top: 18px;
+    padding: 12px 18px;
+}
+
+.shattered-hearts {
+    background:
+        linear-gradient(145deg, #241017, #0d0b10 75%);
+}
+
+.shattered-hearts:hover {
+    border-color: #8c4053;
+    box-shadow: 0 16px 35px rgba(74, 22, 38, 0.2);
+}
+
+.canary-love {
+    background:
+        linear-gradient(145deg, #351708, #120906 75%);
+}
+
+.canary-love:hover {
+    border-color: #d8893c;
+    box-shadow: 0 16px 35px rgba(174, 84, 25, 0.18);
+}
+
+.lonely-man {
+    background:
+        linear-gradient(145deg, #18212d, #0c0e13 75%);
+}
+
+.lonely-man:hover {
+    border-color: #74859a;
+    box-shadow: 0 16px 35px rgba(44, 65, 86, 0.2);
+}
+
+.on-the-beach {
+    background:
+        linear-gradient(145deg, #3a2b1d, #12202a 90%);
+}
+
+.on-the-beach:hover {
+    border-color: #bca071;
+    box-shadow: 0 16px 35px rgba(147, 116, 77, 0.18);
+}
+
+.coming-soon-card {
+    position: relative;
+    overflow: hidden;
+
+    border-style: dashed;
+
+    background:
+        linear-gradient(145deg, #202023, #0c0c0e 75%);
+
+    opacity: 0.72;
+}
+
+.coming-soon-card::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        repeating-linear-gradient(
+            -45deg,
+            transparent,
+            transparent 14px,
+            rgba(255, 255, 255, 0.012) 14px,
+            rgba(255, 255, 255, 0.012) 28px
+        );
+
+    pointer-events: none;
+}
+
+.coming-soon-card:hover {
+    transform: none;
+    border-color: #625a5d;
+}
+
+.locked-label {
+    align-self: end;
+    justify-self: start;
+
+    margin-top: 20px;
+
+    color: #867c7f;
+
+    font-size: 0.72rem;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+}
+
+/* =========================
+   7. COLLECTION HERO PAGES
+========================= */
+
+.collection-hero {
+    width: 100%;
+    min-height: 72vh;
+    padding: 120px 7% 70px;
+
+    display: flex;
+    flex-direction: column;
+
+    border-bottom: 1px solid var(--line-color, var(--global-line));
+
+    background:
+        radial-gradient(
+            circle at 72% 38%,
+            var(--accent-glow, rgba(104, 31, 48, 0.23)),
+            transparent 45%
+        ),
+        var(--page-theme-bg, var(--page-bg));
+}
+
+.shattered-hero {
+    --accent-glow: rgba(104, 31, 48, 0.23);
+}
+
+.canary-hero {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 70% 40%,
+            rgba(204, 94, 24, 0.25),
+            transparent 42%
+        ),
+        radial-gradient(
+            circle at 25% 80%,
+            rgba(111, 32, 26, 0.18),
+            transparent 38%
+        ),
+        var(--page-theme-bg);
+}
+
+.canary-hero::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            115deg,
+            transparent 25%,
+            rgba(255, 157, 62, 0.025) 50%,
+            transparent 75%
+        );
+
+    pointer-events: none;
+}
+
+.lonely-hero {
+    --accent-glow: rgba(92, 124, 154, 0.24);
+}
+
+.beach-hero {
+    background:
+        radial-gradient(
+            circle at 75% 28%,
+            rgba(221, 166, 98, 0.22),
+            transparent 42%
+        ),
+        radial-gradient(
+            circle at 24% 82%,
+            rgba(72, 125, 148, 0.19),
+            transparent 44%
+        ),
+        var(--page-theme-bg);
+}
+
+.collection-heading {
+    width: 100%;
+    max-width: 1050px;
+    margin: auto 0;
+    padding-top: 30px;
+}
+
+.collection-heading h1 {
+    max-width: 1000px;
+    margin: 10px 0 24px;
+
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: normal;
+    line-height: 1.05;
+}
+
+.collection-tagline {
+    max-width: 650px;
+
+    color: var(--tagline-color, #c4b9bc);
+
+    font-size: 1.15rem;
+    line-height: 1.8;
+    font-style: italic;
+}
+
+.return-link {
+    display: inline-block;
+
+    margin-top: 26px;
+    padding: 12px 18px;
+
+    border: 1px solid var(--accent, var(--global-accent));
+
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 0.04rem;
+
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.return-link:hover {
+    color: #ffffff;
+    background: var(--accent-dark, var(--global-accent-dark));
+    border-color: var(--accent-soft, var(--global-accent));
+    transform: translateX(-3px);
+}
+
+/* =========================
+   8. COLLECTION CONTENT
+========================= */
+
+.collection-content {
+    width: 100%;
+    max-width: var(--reading-width);
+    margin: 0 auto;
+    padding: 90px 24px;
+}
+
+.collection-introduction {
+    max-width: 700px;
+    margin-bottom: 90px;
+}
+
+.collection-introduction h2,
+.poem-list > h2 {
+    margin-top: 0;
+
+    font-size: 2.2rem;
+    font-weight: normal;
+}
+
+.collection-introduction p {
+    color: #bdb3b6;
+    line-height: 1.9;
+}
+
+.poem-list {
+    width: 100%;
+}
+
+.poem-entry {
+    width: 100%;
+    padding: 28px 0;
+
+    display: grid;
+    grid-template-columns: 60px minmax(0, 1fr) auto;
+    gap: 24px;
+    align-items: center;
+
+    border-top: 1px solid var(--line-color, #342a2e);
+}
+
+.poem-entry:last-child {
+    border-bottom: 1px solid var(--line-color, #342a2e);
+}
+
+.poem-entry h3 {
+    margin: 0 0 8px;
+
+    font-size: 1.45rem;
+    font-weight: normal;
+}
+
+.poem-entry p {
+    margin: 0;
+
+    color: var(--text-muted);
+}
+
+.poem-number {
+    color: var(--accent-soft, #ba7b86);
+
+    font-size: 0.85rem;
+    letter-spacing: 0.12rem;
+}
+
+.poem-entry span {
+    color: var(--accent-soft, #8f6871);
+
+    font-size: 0.75rem;
+    letter-spacing: 0.12rem;
+    text-transform: uppercase;
+}
+
+/* =========================
+   9. SUB-COLLECTION TILES
+========================= */
+
+.subcollection-section {
+    margin-top: 80px;
+}
+
+.subcollection-section > h2 {
+    margin: 10px 0 36px;
+
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: normal;
+}
+
+.subcollection-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.subcollection-card {
+    min-height: 390px;
+    padding: 30px;
+
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+
+    border: 1px solid var(--line-color, #382d32);
+
+    background:
+        linear-gradient(145deg, #181318, #0c0b0e 78%);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.subcollection-card:hover {
+    transform: translateY(-5px);
+}
+
+.subcollection-label {
+    margin: 0;
+
+    color: var(--accent-soft, #9b727c);
+
+    font-size: 0.75rem;
+    letter-spacing: 0.16rem;
+    text-transform: uppercase;
+}
+
+.subcollection-card h3 {
+    margin: 12px 0 18px;
+
+    font-size: 1.8rem;
+    font-weight: normal;
+}
+
+.subcollection-card > p:not(.subcollection-label) {
+    margin: 0;
+
+    color: #b9afb2;
+    line-height: 1.8;
+}
+
+.subcollection-card a {
+    justify-self: start;
+    align-self: end;
+
+    margin-top: 24px;
+    padding: 12px 16px;
+
+    border: 1px solid var(--accent, #844052);
+
+    color: #ffffff;
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.subcollection-card a:hover {
+    background: var(--accent-dark, #6e2b3d);
+    border-color: var(--accent-soft, #9b727c);
+    transform: translateY(-2px);
+}
+
+/* Shattered Hearts volumes */
+
+.shattered-volume-one {
+    background:
+        linear-gradient(145deg, #2a1119, #0d0b10 78%);
+}
+
+.shattered-volume-two {
+    background:
+        linear-gradient(145deg, #22131d, #0b0a0f 78%);
+}
+
+.shattered-volume-three {
+    background:
+        linear-gradient(145deg, #151421, #09090d 78%);
+}
+
+.shattered-volume-one:hover,
+.shattered-volume-two:hover,
+.shattered-volume-three:hover {
+    border-color: #8c4053;
+    box-shadow: 0 16px 35px rgba(74, 22, 38, 0.2);
+}
+
+/* Lonely Man parts */
+
+.lonely-part-one {
+    background:
+        linear-gradient(145deg, #243447, #10151c 78%);
+}
+
+.lonely-part-two {
+    background:
+        linear-gradient(145deg, #1c2a39, #0c1117 78%);
+}
+
+.lonely-part-three {
+    background:
+        linear-gradient(145deg, #15212d, #090d12 78%);
+}
+
+.lonely-part-one:hover,
+.lonely-part-two:hover,
+.lonely-part-three:hover {
+    border-color: #8298ae;
+    box-shadow: 0 16px 35px rgba(48, 72, 96, 0.28);
+}
+
+/* =========================
+   10. ABOUT & FOOTER
+========================= */
+
+.about-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 100px 24px;
+
+    border-top: 1px solid #292126;
+}
+
+.about-section h2 {
+    max-width: 650px;
+    margin: 12px 0 20px;
+
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: normal;
+}
+
+.about-section > p:last-child {
+    max-width: 650px;
+
+    color: #bdb3b6;
+    line-height: 1.9;
+}
+
+footer {
+    padding: 35px 20px;
+
+    border-top: 1px solid #292126;
+
+    color: #8f8588;
+    text-align: center;
+}
+
+/* =========================
+   11. RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 900px) {
+    .subcollection-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .subcollection-card {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 760px) {
+    .site-nav {
+        padding: 16px 20px;
+
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .nav-links {
+        width: 100%;
+
+        gap: 16px;
+
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .nav-links a {
+        font-size: 0.72rem;
+    }
+
+    .hero,
+    .collection-hero {
+        padding-top: 160px;
+    }
+
+    .collection-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .collection-card {
+        min-height: 350px;
+    }
+}
+
+@media (max-width: 650px) {
+    .collection-hero {
+        min-height: 60vh;
+        padding-inline: 24px;
+    }
+
+    .collection-content {
+        padding: 70px 20px;
+    }
+
+    .poem-entry {
+        grid-template-columns: 40px minmax(0, 1fr);
+    }
+
+    .poem-entry span {
+        grid-column: 2;
+    }
+}
+
+/* =========================
+   12. INDIVIDUAL POEM PAGES
+========================= */
+
+.poem-page {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 180px 24px 100px;
+}
+
+.poem-header {
+    max-width: 800px;
+    margin-bottom: 85px;
+}
+
+.poem-position {
+    margin: 22px 0 8px;
+
+    color: var(--text-muted);
+
+    font-size: 0.8rem;
+    letter-spacing: 0.14rem;
+    text-transform: uppercase;
+}
+
+.poem-header h1 {
+    margin: 0;
+
+    font-size: clamp(3.5rem, 9vw, 7.5rem);
+    font-weight: normal;
+    line-height: 1;
+}
+
+.poem-subtitle {
+    max-width: 650px;
+    margin: 24px 0 0;
+
+    color: var(--tagline-color, #c4b9bc);
+
+    font-size: 1.15rem;
+    font-style: italic;
+    line-height: 1.8;
+}
+
+.poem-body {
+    width: 100%;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.poem-body p {
+    margin: 0 0 36px;
+
+    color: var(--text);
+
+    font-size: clamp(1.08rem, 2vw, 1.3rem);
+    line-height: 2;
+}
+
+.poem-navigation {
+    margin-top: 100px;
+    padding-top: 30px;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+
+    border-top: 1px solid var(--line-color, var(--global-line));
+}
+
+.poem-nav-link {
+    min-height: 115px;
+    padding: 22px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border: 1px solid var(--line-color, var(--global-line));
+
+    text-decoration: none;
+
+    transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.poem-nav-link span {
+    margin-bottom: 8px;
+
+    color: var(--accent-soft, #ba7b86);
+
+    font-size: 0.72rem;
+    letter-spacing: 0.13rem;
+    text-transform: uppercase;
+}
+
+.poem-nav-link strong {
+    color: var(--text);
+
+    font-size: 1.15rem;
+    font-weight: normal;
+}
+
+.poem-nav-link:hover {
+    border-color: var(--accent, var(--global-accent));
+    background: rgba(255, 255, 255, 0.025);
+    transform: translateY(-3px);
+}
+
+.poem-nav-next {
+    text-align: right;
+}
+
+.poem-nav-volume {
+    text-align: center;
+}
+
+.poem-nav-home {
+    text-align: right;
+}
+
+.poem-nav-home strong {
+    font-size: 1.05rem;
+}
+
+@media (max-width: 650px) {
+    .poem-page {
+        padding: 175px 20px 75px;
+    }
+
+    .poem-header {
+        margin-bottom: 65px;
+    }
+
+    .poem-body {
+        margin: 0;
+    }
+
+    .poem-body p {
+        font-size: 1.05rem;
+        line-height: 1.85;
+    }
+
+    .poem-navigation {
+        grid-template-columns: 1fr;
+    }
+
+    .poem-nav-next {
+        text-align: left;
+    }
+}
+
+.poem-title-link {
+    color: var(--text);
+    text-decoration: none;
+}
+
+.poem-title-link:hover {
+    color: var(--accent-soft, #ba7b86);
+}
+
+.poem-read-link {
+    color: var(--accent-soft, #ba7b86);
+
+    font-size: 0.75rem;
+    letter-spacing: 0.12rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.poem-read-link:hover {
+    color: var(--text);
+}
+
+.locked-button {
+    width: 100%;
+    margin-top: auto;
+    padding: 16px 18px;
+
+    border: 1px solid var(--accent);
+    background: rgba(0, 0, 0, 0.18);
+
+    color: var(--accent-soft);
+
+    font-family: inherit;
+    font-size: .82rem;
+    letter-spacing: .18rem;
+    text-transform: uppercase;
+
+    cursor: default;
+}
+
+/* =========================
+   CONTENT WARNING BADGES
+========================= */
+
+.poem-title-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.poem-title-row h3 {
+    margin: 0;
+}
+
+.content-warning-badge {
+    display: inline-block;
+    padding: 5px 9px;
+
+    border: 1px solid var(--accent, var(--global-accent));
+
+    color: var(--accent-soft, #ba7b86);
+    background: rgba(0, 0, 0, 0.2);
+
+    font-size: 0.62rem;
+    letter-spacing: 0.1rem;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+/* =========================
+   ARCHIVE NOTICE MODAL
+========================= */
+
+.archive-warning-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 5000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    background: rgba(4, 4, 7, 0.84);
+    backdrop-filter: blur(8px);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease;
+}
+
+.archive-warning-modal.is-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.archive-warning-dialog {
+    width: 100%;
+    max-width: 540px;
+    padding: 42px;
+
+    border: 1px solid var(--accent, var(--global-accent));
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(24, 15, 18, 0.98),
+            rgba(9, 9, 12, 0.99)
+        );
+
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+
+    text-align: center;
+
+    transform: translateY(18px);
+
+    transition: transform 0.2s ease;
+}
+
+.archive-warning-modal.is-visible .archive-warning-dialog {
+    transform: translateY(0);
+}
+
+.archive-warning-label {
+    margin: 0 0 14px;
+
+    color: var(--accent-soft, #ba7b86);
+
+    font-size: 0.72rem;
+    letter-spacing: 0.22rem;
+    text-transform: uppercase;
+}
+
+.archive-warning-dialog h2 {
+    margin: 0 0 20px;
+
+    color: var(--text);
+
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: normal;
+}
+
+.archive-warning-message {
+    max-width: 420px;
+    margin: 0 auto;
+
+    color: var(--text-soft);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.archive-warning-actions {
+    margin-top: 34px;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.archive-warning-actions button,
+.archive-warning-actions a {
+    min-height: 52px;
+    padding: 14px 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--accent, var(--global-accent));
+
+    font-family: inherit;
+    font-size: 0.76rem;
+    letter-spacing: 0.1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.archive-warning-cancel {
+    color: var(--text-soft);
+    background: transparent;
+}
+
+.archive-warning-continue {
+    color: #ffffff;
+    background: var(--accent-dark, var(--global-accent-dark));
+}
+
+.archive-warning-actions button:hover,
+.archive-warning-actions a:hover {
+    transform: translateY(-2px);
+}
+
+.archive-warning-cancel:hover {
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.035);
+}
+
+.archive-warning-continue:hover {
+    background: var(--accent, var(--global-accent));
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+@media (max-width: 600px) {
+    .archive-warning-dialog {
+        padding: 32px 22px;
+    }
+
+    .archive-warning-actions {
+        grid-template-columns: 1fr;
+    }
+}
+
+.poem-nav-warning {
+    margin-top: 10px;
+
+    color: var(--accent-soft, #ba7b86);
+
+    font-size: 0.58rem;
+    letter-spacing: 0.11rem;
+    text-transform: uppercase;
+}
