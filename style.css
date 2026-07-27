@@ -948,9 +948,12 @@ footer {
 .poem-header h1 {
     margin: 0;
 
-    font-size: clamp(3.5rem, 9vw, 7.5rem);
+    font-size: clamp(2.8rem, 7vw, 5.5rem);
     font-weight: normal;
-    line-height: 1;
+    line-height: 1.05;
+
+    max-width: 14ch;
+    overflow-wrap: anywhere;
 }
 
 .poem-subtitle {
