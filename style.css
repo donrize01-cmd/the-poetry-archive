@@ -417,6 +417,29 @@ main {
     box-shadow: 0 16px 35px rgba(147, 116, 77, 0.18);
 }
 
+.ephemera {
+    background:
+        radial-gradient(
+            circle at 18% 18%,
+            rgba(160, 30, 30, 0.20),
+            transparent 42%
+        ),
+        linear-gradient(
+            145deg,
+            #451010,
+            #1a090b 72%,
+            #0c0a0c
+        );
+}
+
+.ephemera:hover {
+    border-color: #e05252;
+
+    box-shadow:
+        0 16px 35px rgba(170, 35, 35, 0.24),
+        0 0 30px rgba(210, 60, 60, 0.12);
+}
+
 .coming-soon-card {
     position: relative;
     overflow: hidden;
