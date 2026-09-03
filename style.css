@@ -1316,3 +1316,30 @@ body.modal-open {
     letter-spacing: 0.11rem;
     text-transform: uppercase;
 }
+
+.ephemera-page {
+    --accent: #c43737;
+    --accent-soft: #e66a6a;
+    --accent-dark: #7d2020;
+    --accent-glow: rgba(196, 55, 55, 0.24);
+    --page-theme-bg: #100909;
+    --line-color: #4a2424;
+    --tagline-color: #d9b7b7;
+
+    background:
+        linear-gradient(
+            rgba(18, 7, 7, 0.92),
+            rgba(7, 7, 9, 0.99)
+        ),
+        var(--page-theme-bg);
+}
+
+.ephemera {
+    background:
+        linear-gradient(145deg, #3a1010, #10090b, 78%);
+}
+
+.ephemera:hover {
+    border-color: #d24b4b;
+    box-shadow: 0 16px 35px rgba(151, 38, 38, 0.22);
+}
