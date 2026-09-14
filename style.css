@@ -1366,3 +1366,32 @@ body.modal-open {
     border-color: #d24b4b;
     box-shadow: 0 16px 35px rgba(151, 38, 38, 0.22);
 }
+
+/* =========================
+   0.4 ANIMATIONS
+========================= */
+
+@keyframes pageFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    animation: pageFadeIn 0.5s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
