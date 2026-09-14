@@ -67,11 +67,13 @@
 
         <nav class="poem-navigation" aria-label="Poem navigation">
             <a
-                class="poem-nav-link poem-nav-back"
+                class="poem-nav-link poem-nav-back warning-link"
                 href="shc-v1-20-this-poem.html"
+                data-warning="This poem contains graphic content."
             >
                 <span>Return to</span>
                 <strong>This Poem is About You but You'll Never Know That</strong>
+                <span class="poem-nav-warning">Mature Content</span>
             </a>
 
             <a
@@ -96,7 +98,52 @@
         <p>Written by SMOKE</p>
     </footer>
 
+    <div
+        class="archive-warning-modal"
+        id="archive-warning-modal"
+        aria-hidden="true"
+    >
+        <div
+            class="archive-warning-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="archive-warning-title"
+        >
+            <p class="archive-warning-label">
+                Archive Notice
+            </p>
+
+            <h2 id="archive-warning-title">
+                Mature Content
+            </h2>
+
+            <p
+                class="archive-warning-message"
+                id="archive-warning-message"
+            >
+                This poem contains mature material.
+            </p>
+
+            <div class="archive-warning-actions">
+                <button
+                    class="archive-warning-cancel"
+                    id="archive-warning-cancel"
+                    type="button"
+                >
+                    Return
+                </button>
+
+                <a
+                    class="archive-warning-continue"
+                    id="archive-warning-continue"
+                    href="#"
+                >
+                    Continue Reading
+                </a>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
-```
