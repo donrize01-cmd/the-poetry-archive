@@ -339,13 +339,13 @@ main {
     background: var(--surface);
 
     transition:
-        transform 0.25s ease,
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
 }
 
 .collection-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-7px);
 }
 
 .collection-card h2 {
@@ -1413,3 +1413,24 @@ body {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* =========================
+   STAGGERED REVEALS
+========================= */
+
+.reveal-delay-1 {
+    transition-delay: 0.08s;
+}
+
+.reveal-delay-2 {
+    transition-delay: 0.16s;
+}
+
+.reveal-delay-3 {
+    transition-delay: 0.24s;
+}
+
+.reveal-delay-4 {
+    transition-delay: 0.32s;
+}
+
