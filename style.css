@@ -341,7 +341,8 @@ main {
     transition:
         transform 0.35s ease,
         border-color 0.35s ease,
-        box-shadow 0.35s ease;
+        box-shadow 0.35s ease,
+        background 0.35s ease;
 }
 
 .collection-card:hover {
@@ -375,6 +376,31 @@ main {
 
     margin-top: 18px;
     padding: 12px 18px;
+}
+
+.collection-card .collection-link {
+    display: inline-block;
+
+    transition:
+        transform 0.25s ease,
+        letter-spacing 0.25s ease,
+        color 0.25s ease;
+}
+
+.collection-card:hover .collection-link {
+    transform: translateX(4px);
+    letter-spacing: 0.04em;
+}
+
+.collection-card h2 {
+    transition: 
+        transform 0.3s ease,
+        text-shadow 0.3s ease;
+}
+
+.collection-card:hover h2 {
+    transform: translateY(-2px);
+    text-shadow: 0 0 18px var(--accent-glow);
 }
 
 .shattered-hearts {
