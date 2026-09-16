@@ -358,17 +358,20 @@ main {
 .collection-card::before {
     content: "";
     position: absolute;
-    inset: -25%;
+    
+    width: 75%;
+    height: 75%;
+    left: 12.5%;
+    top: 12.5%;
 
-    background:
-        radial-gradient(
-            circle at 50% 50%,
-            var(--accent-glow),
-            transparent 65%
+    background: radial-gradient(
+            circle,
+            var(--card-glow, rgba(255,255,255,0.12)) 0%,
+            transparent 70%
         );
 
     opacity: 0;
-    transform: scale(0.75);
+    transform: scale(0.7);
 
     transition:
         opacity 0.6s ease,
@@ -380,7 +383,7 @@ main {
 
 .collection-card:hover::before {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1.35);
 }
 
 .collection-card > * {
@@ -441,20 +444,13 @@ main {
     display: inline-block;
 
     transition:
-        transform 0.25s ease,
-        letter-spacing 0.25s ease,
-        color 0.25s ease;
-}
-
-.collection-card .collection-link {
-    transition:
         background-color 0.3s ease,
         border-color 0.3s ease,
         box-shadow 0.3s ease;
 }
 
 .collection-card:hover .collection-link {
-    box-shadow: 0 0 18px var(--accent-glow);
+    box-shadow: 0 0 18px var(--card-glow);
 }
 
 .shattered-hearts {
