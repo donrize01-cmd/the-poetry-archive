@@ -1510,32 +1510,3 @@ body {
     transition-delay: 0.32s;
 }
 
-/* TEMPORARY GLOW TEST */
-
-.collection-card {
-    position: relative;
-    overflow: hidden;
-}
-
-.collection-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    background: rgba(255, 0, 0, 0.65);
-
-    opacity: 0;
-    transition: opacity 0.4s ease;
-
-    pointer-events: none;
-    z-index: 0;
-}
-
-.collection-card:hover::before {
-    opacity: 1;
-}
-
-.collection-card > * {
-    position: relative;
-    z-index: 1;
-}
