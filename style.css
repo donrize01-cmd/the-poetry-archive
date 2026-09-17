@@ -1541,6 +1541,56 @@ body {
     }
 }
 
+/* =========================
+   COLLECTION PERSONALITIES
+========================= */
+.shattered-page .collection-hero {
+    animation-duration: 16s;
+}
+
+.shattered-page .collection-hero::before {
+    animation-duration: 28s;
+    opacity: 0.34;
+}
+
+.canary-page .collection-hero {
+    animation-duration: 13s;
+}
+
+.canary-page .collection-hero::before {
+    animation-duration: 21s;
+    opacity: 0.42;
+    }
+
+.lonely-page .collection-hero {
+    animation-duration: 22s;
+}
+
+.lonely-page .collection-hero::before {
+    animation-duration: 34s;
+    opacity: 0.26;
+}
+
+.beach-page .collection-hero {
+    animation-duration: 18s;
+}
+
+.beach-page .collection-hero::before {
+    animation-duration: 26s;
+    opacity: 0.32;
+}
+
+.ephemera-page .collection-hero {
+    animation-duration: 15s;
+}
+
+.ephemera-page .collection-hero::before {
+    animation-duration: 23s;
+    opacity: 0.36;
+}
+
+
+
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
