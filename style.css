@@ -1640,3 +1640,47 @@ body {
     transition-delay: 0.32s;
 }
 
+/* =========================
+   POEM EFFECT - LIGHTNING
+========================= */
+
+.lightning-flash {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(235, 245, 255, 0);
+
+    pointer-events: none;
+
+    z-index: 9999;
+}
+
+.lightning_flash.is-active {
+    animation: lightningFlash 0.55s ease-out;
+}
+
+@keyframes lightningFlash {
+    0% {
+        background: rgba(235, 245, 255, 0);
+    }
+
+    8% {
+        background: rgba(235, 245, 255, 0.88);
+    }
+
+    16% {
+        background: rgba(235, 245, 255, 0.08);
+    }
+
+    25% {
+        background: rgba(235, 245, 255, 0.65);
+    }
+
+    38% {
+        background: rgba(235, 245, 255, 0.04);
+    }
+
+    100% {
+        background: rgba(235, 245, 255, 0);
+    }
+}

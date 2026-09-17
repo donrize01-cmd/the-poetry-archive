@@ -85,3 +85,38 @@ const revealObserver = new IntersectionObserver(
 revealElements.forEach((element) => {
     revealObserver.observe(element);
 });
+
+const lightningTrigger = document.querySelector(
+    '.poem-effect[data-effect="lightning"]'
+);
+
+const lightningFlash = document.querySelector(".lightning-flash");
+
+if (lightningTrigger && lightningFlash) {
+    let lightningPlayed = false;
+
+    const lightningObserver = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting || lightningPlayed) return;
+
+                lightningPlayed = true;
+
+                lightningFlash.classList.add("is-active");
+
+                setTimeout(() => {
+                    lightningFlash.classList.remove("is-active");
+                }, 600);
+            });
+        },
+        {
+            root: null,
+
+            rootMargin: "-42% 0px -42% 0px",
+
+            threshold: 0
+        }
+    );
+
+    lightningObserver.observe(lightningTrigger);
+}
