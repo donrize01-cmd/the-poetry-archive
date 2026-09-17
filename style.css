@@ -1503,20 +1503,17 @@ body {
     content: "";
 
     position: absolute;
-    width: 70%;
-    height: 70%;
 
-    top: 10%;
-    right: -10%;
+    inset: -35%;
 
     background:
         radial-gradient(
-            circle,
+            circle at 65% 45%,
             var(--accent-glow, rgba(104, 31, 48, 0.16)),
-            transparent 70%
+            transparent 55%
         );
     
-    opacity: 0.45;
+    opacity: 0.38;
 
     pointer-events: none;
     z-index: 0;
@@ -1528,11 +1525,19 @@ body {
 @keyframes ambientDrift {
     0%,
     100% {
-        transform: translate(0, 0);
+        transform: translate(0, 0) scale(1);
+    }
+
+    75% {
+        transform: translate(-1.5%, 1%) scale(1.02);
     }
 
     50% {
-        transform: translate(-3%, 2%);
+        transform: translate(-3%, 2%) scale(1.04)
+    }
+
+    25% {
+        transform: translate(-1%, -1%) scale(1.02);
     }
 }
 
