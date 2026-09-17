@@ -1479,20 +1479,10 @@ body {
     0%,
     100% {
         background-size: 100% 100%;
-        background-position: 50% 50%;
-    }
-
-    25% {
-        background-size: 51% 49%;
     }
 
     50% {
         background-size: 100% 100%;
-        background-position: 49% 51%;
-    }
-
-    75% {
-        background-position: 51% 49%;
     }
 }
 
@@ -1502,6 +1492,48 @@ body {
 
     animation:
         ambientBreathing 18s ease-in-out infinite;
+}
+
+.collection-hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.collection-hero::before {
+    content: "";
+
+    position: absolute;
+    width: 70%;
+    height: 70%;
+
+    top: 10%;
+    right: -10%;
+
+    background:
+        radial-gradient(
+            circle,
+            var(--accent-glow, rgba(104, 31, 48, 0.16)),
+            transparent 70%
+        );
+    
+    opacity: 0.45;
+
+    pointer-events: none;
+    z-index: 0;
+
+    animation:
+        ambientDrift 24s ease-in-out infinite;
+}
+
+@keyframes ambientDrift {
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-3%, 2%);
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
