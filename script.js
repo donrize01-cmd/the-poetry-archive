@@ -104,10 +104,12 @@ if (lightningTrigger && lightningFlash) {
 
                 lightningFlash.classList.add("is-active");
                 document.body.classList.add("lightning-impact");
+                lightningTrigger.classList.add("is-struck");
 
                 setTimeout(() => {
                     lightningFlash.classList.remove("is-active");
                     document.body.classList.remove("lightning-impact");
+                    lightningTrigger.classList.remove("is-struck");
                 }, 600);
             });
         },

@@ -1685,10 +1685,6 @@ body {
     }
 }
 
-/* =========================
-   LIGHTNING BOLTS
-========================= */
-
 .lightning-bolt {
     position: absolute;
     top: -10vh;
@@ -1805,10 +1801,6 @@ lightning-bolt-branch {
     }
 }
 
-/* =========================
-   LIGHTNING IMPACT
-========================= */
-
 body.lightning-impact .poem-page {
     animation: lightningImpact 0.28s ease-out;
 }
@@ -1836,5 +1828,44 @@ body.lightning-impact .poem-page {
 
     100% {
         transform: translate(0,0);
+    }
+}
+
+.poem-effect[data-effect="lightning"] {
+    display: inline-block;
+}
+
+.poem-effect[data-effect="lightning"].is-struck {
+    animation: lightningTextImpact 0.45555s ease-out;
+}
+
+@keyframes lightningTextImpact {
+    0% {
+        color: inherit;
+        text-shadow: none;
+        transform: scale(1);
+    }
+
+    12% {
+        color: #ffffff;
+        text-shadow:
+            0 0 8px rgba(255, 255, 255, 0.95),
+            0 0 20px rgba(210, 230, 255, 0.8),
+            0 0 35px rgba(180, 210, 255, 0.55);
+        transform: scale(1.12);
+    }
+
+    30% {
+        color: #ffffff;
+        text-shadow:
+            0 0 5px rgba(255, 255, 255, 0.7),
+            0 0 14px rgba(210, 230, 255, 0.5);
+        transform: scale(1.05);
+    }
+
+    100% {
+        color: inherit;
+        text-shadow: none;
+        transform: scale(1);
     }
 }
