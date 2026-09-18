@@ -1727,7 +1727,7 @@ body {
     transform: rotate(7deg);
 }
 
-lightning-bolt-branch {
+.lightning-bolt-branch {
     left: 60%;
     top: 22vh;
 
