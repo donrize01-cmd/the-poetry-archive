@@ -1655,7 +1655,7 @@ body {
     z-index: 9999;
 }
 
-.lightning_flash.is-active {
+.lightning-flash.is-active {
     animation: lightningFlash 0.55s ease-out;
 }
 
