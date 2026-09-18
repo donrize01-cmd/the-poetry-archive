@@ -103,9 +103,11 @@ if (lightningTrigger && lightningFlash) {
                 lightningPlayed = true;
 
                 lightningFlash.classList.add("is-active");
+                document.body.classList.add("lightning-impact");
 
                 setTimeout(() => {
                     lightningFlash.classList.remove("is-active");
+                    document.body.classList.remove("lightning-impact");
                 }, 600);
             });
         },

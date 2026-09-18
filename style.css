@@ -1804,3 +1804,37 @@ lightning-bolt-branch {
         opacity: 0;
     }
 }
+
+/* =========================
+   LIGHTNING IMPACT
+========================= */
+
+body.lightning-impact .poem-page {
+    animation: lightningImpact 0.28s ease-out;
+}
+
+@keyframes lightningImpact {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    18% {
+        transform: translate(-4px, 2px);
+    }
+
+    35% {
+        transform: translate(3px, -3px);
+    }
+
+    52% {
+        transform: translate(-2px, 1px);
+    }
+
+    70% {
+        transform: translate(1px, -1px);
+    }
+
+    100% {
+        transform: translate(0,0);
+    }
+}
