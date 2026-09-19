@@ -1685,95 +1685,105 @@ body {
     }
 }
 
-.lightning-bolt {
+.lightning-svg {
     position: absolute;
-    top: -10vh;
+    inset: 0;
 
-    width: 5px;
-    height: 120vh;
+    width: 100%;
+    height: 100%;
 
-    background: rgba(245, 250, 255, 0.95);
+    overflow: visible;
 
     opacity: 0;
 
-    filter:
-        drop-shadow(0 0 6px rgba(220, 235, 255, 0.9))
-        drop-shadow(0 0 18px rgba(180, 210, 255, 0.65));
-
-    transform-origin: top center;
+    pointer-events: none;
 }
 
-.lightning-bolt-main {
-    left: 58%;
+.lightning-path {
+    fill: none;
 
-    clip-path: polygon(
-        45% 0%,
-        100% 0%,
-        65% 18%,
-        100% 18%,
-        38% 42%,
-        82% 42%,
-        25% 68%,
-        65% 68%,
-        0% 100%,
-        32% 61%,
-        5% 61%,
-        55% 36%,
-        18% 36%,
-        68% 14%,
-        35% 14%
-    );
+    stroke-linecap: round;
+    stroke-linejoin: round;
 
-    transform: rotate(7deg);
+    vector-effect: non-scaling-stroke;
 }
 
-.lightning-bolt-branch {
-    left: 60%;
-    top: 22vh;
+.lightning-core {
+    stroke: rgba(255, 255, 255, 1);
+    stroke-width: 3;
 
-    height: 55vh;
-    width: 4px;
-
-    clip-path: polygon(
-        40% 0%,
-        100% 0%,
-        55% 30%,
-        100% 30%,
-        20% 100%,
-        48% 42%,
-        0% 42%
-    );
-
-    transform: rotate(-24deg);
+    filter: 
+        drop-shadow(0 0 2px rgba(255, 255, 255, 1))
+        drop-shadow(0 0 7px rgba(210, 230, 255, 0.95))
+        drop-shadow(0 0 16px rgba(170, 205, 255, 0.75));
 }
 
-.lightning-flash.is-active .lightning-bolt-main {
-    animation: lightningBoltMain 0.55s ease-out;
+.lightning-glow {
+    stroke: rgba(190, 220, 255, 0.75);
+    stroke-width: 11;
+
+    filter: url(#lightning-glow);
+
+    opacity: 0.65;
 }
 
-.lightning-flash.is-active .lightning-bolt-branch {
-    animation: lightningBoltBranch 0.55s ease-out;
+.lightning-branch {
+    stroke: rgba(235, 245, 255, 0.95);
+    stroke-width: 2;
+
+    filter: 
+        drop-shadow(0 0 4px rgba(220, 235, 255, 0.9))
+        drop-shadow(0 0 10px rgba(170, 205, 255, 0.65));
 }
 
-@keyframes lightningBoltMain {
+.lightning-tendril {
+    stroke: rgba(210, 230, 255, 0.75);
+    stroke-width: 1.2;
+
+    filter: 
+        drop-shadow(0 0 4px rgba(190, 220, 255, 0.65));
+}
+
+.lightning-flash.is-active .lightning-svg {
+    animation: lightningStrike 0.55s linear;
+}
+
+@keyframes lightningStrike {
+
     0%,
-    6% {
+    5% {
         opacity: 0;
     }
 
-    8% {
+    6% {
         opacity: 1;
     }
 
-    15% {
+    10% {
+        opacity: 0.25;
+    }
+
+    13% {
+        opacity: 1;
+    }
+
+    18% {
         opacity: 0;
     }
 
-    24% {
+    23% {
         opacity: 0.85;
     }
 
-    31% {
+    28% {
+        opacity: 0.15;
+    }
+
+    32% {
+        opacity: 0.55;
+    }
+
+    40% {
         opacity: 0;
     }
 
@@ -1782,23 +1792,40 @@ body {
     }
 }
 
-@keyframes lightningBoltBranch {
-    0%,
-    7% {
-        opacity: 0;
-    }
+.lightning-flash.is-active .branch-one {
+    animation: lightningFlickerOne 0.55s linear;
+}
 
-    9% {
-        opacity: 0.8;
-    }
+.lightning-flash.is-active .branch-two {
+    animation: lightningFlickerTwo 0.55s linear;
+}
 
-    14% {
-        opacity: 0;
-    }
+.lightning-flash.is-active .branch-three {
+    animation: lightningFlickerThree 0.55s linear;
+}
 
-    100% {
-        opacity: 0;
-    }
+@keyframes branchFlickerOne {
+    0%, 5%   { opacity: 0; }
+    7%       { opacity: 1; }
+    15%      { opacity: 0.2; }
+    18%      { opacity: 0; }
+    100%     { opacity: 0; }
+}
+
+@keyframes branchFlickerTwo {
+    0%, 8%   { opacity: 0; }
+    10%      { opacity: 0.9; }
+    16%      { opacity: 0; }
+    24%      { opacity: 0.65; }
+    29%      { opacity: 0; }
+    100%     { opacity: 0; }
+}
+
+@keyframes branchFlickerThree {
+    0%, 11%  { opacity: 0; }
+    13%      { opacity: 0.85; }
+    19%      { opacity: 0; }
+    100%     { opacity: 0; }
 }
 
 body.lightning-impact .poem-page {

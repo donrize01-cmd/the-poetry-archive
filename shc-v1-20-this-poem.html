@@ -253,8 +253,117 @@
     </footer>
 
     <div class="lightning-flash" aria-hidden="true">
-        <div class="lightning-bolt lightning-bolt-main"></div>
-        <div class="lightning-bolt lightning-bolt-branch"></div>
+
+        <svg
+            class="lightning-svg"
+            viewBox="0 0 1000 1000"
+            preserveAspectRation="none"
+        >
+            <defs>
+                <filter id="lightning-glow" x="-100%" y="-100%" width="300%" height="300%">
+                    <feGaussianBlur
+                        stdDeviation="8"
+                        result="blur"
+                    />
+
+                    <feMerge>
+                        <feMergeNode in="blur" />
+                        <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                </filter>
+            </defs>
+
+            <path
+                class="lightning-path lightning-glow"
+                d="
+                    M 610 -30
+                    L 585 95
+                    L 625 150
+                    L 570 235
+                    L 600 290
+                    L 535 390
+                    L 565 440
+                    L 500 535
+                    L 525 590
+                    L 455 690
+                    L 480 745
+                    L 415 850
+                    L 430 1030
+                "
+            />
+
+            <path
+                class="lightning-path lightning-core"
+                d="
+                    M 610 -30
+                    L 585 95
+                    L 625 150
+                    L 570 235
+                    L 600 290
+                    L 535 390
+                    L 565 440
+                    L 500 535
+                    L 525 590
+                    L 455 690
+                    L 480 745
+                    L 415 850
+                    L 430 1030
+                "
+            />
+
+            <path
+                class="lightning-path lightning-branch branch-one"
+                d="
+                    M 570 235
+                    L 505 275
+                    L 475 330
+                    L 405 370
+                    L 365 435
+                "
+            />
+
+            <path
+                class="lightning-path lightning-branch branch-two"
+                d="
+                    M 535 390
+                    L 610 420
+                    L 645 480
+                    L 720 515
+                    L 755 590
+                "
+            />
+
+            <path
+                class="lightning-path lightning-branch branch-three"
+                d="
+                    M 455 690
+                    L 390 720
+                    L 355 780
+                    L 290 810
+                    L 245 890
+                "
+            />
+
+            <path
+                class="lightning-path lightning-tendril tendril-one"
+                d="
+                    M 600 290
+                    L 650 315
+                    L 675 350
+                "
+            />
+
+            <path
+                class="lightning-path lightning-tendril tendril-two"
+                d="
+                    M 500 535
+                    L 445 560
+                    L 410 605
+                "
+            />
+
+        </svg>
+        
     </div>
     <script src="script.js"></script>
 </body>
