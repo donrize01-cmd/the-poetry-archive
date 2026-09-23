@@ -2074,9 +2074,3 @@ body.lightning-impact .poem-page {
         padding: 24px;
     }
 }
-
-.reveal,
-.revea.is.visible {
-    opacity: 1 !important;
-    transform: none !important;
-}
