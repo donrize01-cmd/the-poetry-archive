@@ -1603,41 +1603,56 @@ body {
 }
 
 /* =========================
-   SCROLL REVEAL
+   SCROLL REVEAL - REVAMPED
 ========================= */
 
 .reveal {
-    opacity: 0;
-    transform: translateY(28px);
-
-    transition:
-        opacity 0.7s ease,
-        transform 0.7s ease;
+    opacity: 1;
+    translate: 0 0;
 }
 
-.reveal.is-visible {
-    opacity: 1;
-    transform: translateY(0);
+.reveal-system-ready .reveal:not(.is-visible) {
+    opacity: 0;
+    translate: 0 28px;
+}
+
+.reveal-system-ready .reveal-is-visible {
+    animation:
+        archiveReveal 0.7s ease
+        var(--reveal-delay)
+        forwards;
+}
+
+@keyframes archiveReveal {
+    from {
+        opacity: 0;
+        translate: 0 28px;
+    }
+
+    to {
+        opacity: 1;
+        translate: 0 0;
+    }
 }
 
 /* =========================
-   STAGGERED REVEALS
+   STAGGERED REVEAL - REVAMPED
 ========================= */
 
 .reveal-delay-1 {
-    transition-delay: 0.08s;
+    --reveal-delay: 0.08s;
 }
 
 .reveal-delay-2 {
-    transition-delay: 0.16s;
+    --reveal-delay: 0.16s;
 }
 
 .reveal-delay-3 {
-    transition-delay: 0.24s;
+    --reveal-delay: 0.24s;
 }
 
 .reveal-delay-4 {
-    transition-delay: 0.32s;
+    --reveal-delay: 0.32s;
 }
 
 /* =========================
