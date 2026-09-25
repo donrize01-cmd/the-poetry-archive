@@ -65,7 +65,7 @@ document.addEventListener("keydown", (event) => {
         closeWarningModal();
     }
 });
-
+/*
 function initializeScrollReveals() {
     const revealElements =
         document.querySelectorAll(".reveal");
@@ -131,6 +131,7 @@ function initializeScrollReveals() {
 }
 
 initializeScrollReveals();
+*/
 
 const lightningTrigger = document.querySelector(
     '.poem-effect[data-effect="lightning"]'

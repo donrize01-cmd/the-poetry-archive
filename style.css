@@ -1912,3 +1912,13 @@ body.lightning-impact .poem-page {
     }
 }
 
+.reveal,
+.reveal.is-visible,
+.reveal-system-ready .reveal,
+.reveal-system-ready .reveal.reveal:not(.is-visible),
+.reveal-system-ready .reveal.is-visible {
+    opacity: 1 !important;
+    transform: none !important;
+    translate: none !important;
+    animation: none !important;
+}
