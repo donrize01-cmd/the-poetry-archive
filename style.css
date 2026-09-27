@@ -1603,59 +1603,6 @@ body {
 }
 
 /* =========================
-   SCROLL REVEAL - REVAMPED
-========================= */
-
-.reveal {
-    opacity: 1;
-    translate: 0 0;
-}
-
-.reveal-system-ready .reveal:not(.is-visible) {
-    opacity: 0;
-    translate: 0 28px;
-}
-
-.reveal-system-ready .reveal-is-visible {
-    animation:
-        archiveReveal 0.7s ease
-        var(--reveal-delay)
-        forwards;
-}
-
-@keyframes archiveReveal {
-    from {
-        opacity: 0;
-        translate: 0 28px;
-    }
-
-    to {
-        opacity: 1;
-        translate: 0 0;
-    }
-}
-
-/* =========================
-   STAGGERED REVEAL - REVAMPED
-========================= */
-
-.reveal-delay-1 {
-    --reveal-delay: 0.08s;
-}
-
-.reveal-delay-2 {
-    --reveal-delay: 0.16s;
-}
-
-.reveal-delay-3 {
-    --reveal-delay: 0.24s;
-}
-
-.reveal-delay-4 {
-    --reveal-delay: 0.32s;
-}
-
-/* =========================
    POEM SPECIFIC EFFECT - LIGHTNING
 ========================= */
 
@@ -1910,15 +1857,4 @@ body.lightning-impact .poem-page {
         text-shadow: none;
         transform: scale(1);
     }
-}
-
-.reveal,
-.reveal.is-visible,
-.reveal-system-ready .reveal,
-.reveal-system-ready .reveal.reveal:not(.is-visible),
-.reveal-system-ready .reveal.is-visible {
-    opacity: 1 !important;
-    transform: none !important;
-    translate: none !important;
-    animation: none !important;
 }
