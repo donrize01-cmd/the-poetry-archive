@@ -1,5 +1,5 @@
 (() => {
-    const revealElements = 
+    const revealElements =
         document.querySelectorAll(".reveal");
 
     if (revealElements.length === 0) {
@@ -19,64 +19,82 @@
         return;
     }
 
-    const getRevealDelay = (element) => {
-        if (element.classList.contains("reveal-delay-4")) {
-            return 320;
-        }
+    try {
 
-        if (element.classList.contains("reveal-delay-3")) {
-            return 240;
-        }
+        revealElements.forEach((element) => {
+            element.classList.add(
+                "reveal-prepared"
+            );
+        });
 
-        if (element.classList.contains("reveal-delay-2")) {
-            return 160;
-        }
 
-        if (element.classList.contains("reveal-delay-1")) {
-            return 80;
-        }
+        const revealObserver =
+            new IntersectionObserver(
+                (entries, observer) => {
 
-        return 0;
-    };
+                    entries.forEach((entry) => {
 
-    const revealObserver =
-        new IntersectionObserver(
-            (entries, observer) => {
-                entries.forEach((entry) => {
-                    if (!entry.isIntersecting) {
-                        return;
-                    }
+                        if (!entry.isIntersecting) {
+                            return;
+                        }
 
-                    const element = entry.target;
+                        const element =
+                            entry.target;
 
-                    element.animate(
-                        [
-                            {
-                                opacity: 0,
-                                transform: "translateY(28px)"
+                        element.classList.add(
+                            "is-visible"
+                        );
+
+                        observer.unobserve(
+                            element
+                        );
+
+                        element.addEventListener(
+                            "transitionend",
+                            () => {
+                                element.classList.remove(
+                                    "reveal-prepared"
+                                );
+
+                                element.classList.remove(
+                                    "is-visible"
+                                );
                             },
                             {
-                                opacity: 1,
-                                transform: "translate&(0)"
+                                once: true
                             }
-                        ],
-                        {
-                            duration: 700,
-                            delay: getRevealDelay(element),
-                            easing: "ease",
-                            fill: "none"
-                        }
-                    );
+                        );
 
-                    observer.unobserve(element);
-                });
-            },
-            {
-                threshold: 0.15
-            }
+                    });
+                },
+                {
+                    threshold: 0.15
+                }
+            );
+
+
+        revealElements.forEach((element) => {
+            revealObserver.observe(element);
+        });
+
+
+    } catch (error) {
+
+        revealElements.forEach((element) => {
+
+            element.classList.remove(
+                "reveal-prepared"
+            );
+
+            element.classList.remove(
+                "is-visible"
+            );
+
+        });
+
+        console.error(
+            "Scroll reveals failed safely:",
+            error
         );
-
-    revealElements.forEach((element) => {
-        revealObserver.observe(element);
-    });
+    }
 })();
