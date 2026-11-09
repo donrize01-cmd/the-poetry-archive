@@ -65,73 +65,26 @@ document.addEventListener("keydown", (event) => {
         closeWarningModal();
     }
 });
-/*
-function initializeScrollReveals() {
-    const revealElements =
-        document.querySelectorAll(".reveal");
 
-        if (revealElements.length === 0) {
-            return;
-        }
+const revealElements = document.querySelectorAll(".reveal");
 
-        if (!("IntersectionObserver" in window)) {
-            return;
-        }
+const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
 
-        const reducedMotion =
-            window.matchMedia(
-                 "(prefers-reduced-motion; reduce)"
-            ).matches;
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+        });
+    },
+    {
+        threshold: 0.15
+    }
+);
 
-        if (reducedMotion) {
-            return;
-        }
-
-        try {
-            const revealObserver =
-                new IntersectionObserver(
-                    (entries, observer) => {
-                        entries.forEach((entry) => {
-                            if (!entry.isIntersecting) {
-                                return;
-                            }
-
-                            entry.target.classList.add(
-                                "is-visib;e"
-                            );
-
-                            observer.unobserve(
-                                entry.target
-                            );
-                        });
-                    },
-                    {
-                        threshold: 0.15
-                    }
-                );
-
-                revealElements.forEach((element) => {
-                    revealObserver.observe(element);
-                });
-
-                document.documentElement.classList.add(
-                    "reveal-system-ready"
-                );
-
-        } catch (error) {
-            document.documentElement.classList.remove(
-                "reveal-system-ready"
-            );
-
-            console.error(
-                "Scroll reveal system failed safely:",
-                error
-            );
-        }
-}
-
-initializeScrollReveals();
-*/
+revealElements.forEach((element) => {
+    revealObserver.observe(element);
+});
 
 const lightningTrigger = document.querySelector(
     '.poem-effect[data-effect="lightning"]'
