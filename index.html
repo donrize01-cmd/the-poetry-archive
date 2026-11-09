@@ -48,6 +48,62 @@
             </p>
         </section>
 
+        <section
+            class="recent-section"
+            id="recently-added"
+            aria-labelledby="recent-title"
+        >
+            <div class="recent-heading">
+                <div>
+                    <p class="eyebrow">
+                        Fresh from the Archive
+                    </p>
+
+                    <h2 id="recent-title">
+                        Recently Added
+                    </h2>
+                </div>
+
+                <a
+                    class="recent-ephemera-link"
+                    href="ephemera.html"
+                >
+                    Explore Ephemera →
+                </a>
+            </div>
+
+            <div 
+                class="recent-grid"
+                id="recent-poems"
+            ></div>
+        </section>
+
+        <template id="recent-poem-template">
+
+            <article class="recent-poem-card">
+
+                <div class="recent-poem-topline">
+
+                    <p class="recent-poem-collection"></p>
+
+                    <span class="archive-status"></span>
+
+                </div>
+
+                <h3>
+                    <a class="recent-poem-title"></a>
+                </h3>
+
+                <p class="recent-poem-date"></p>
+
+                <a class="recent-poem-link">
+                    Read Poem →
+                </a>
+
+            </article>
+            
+        </template>
+
         <section class="collection-grid">
     <article class="collection-card shattered-hearts reveal reveal-delay-1">
         <p class="collection-label">A Story in Three Volumes</p>
