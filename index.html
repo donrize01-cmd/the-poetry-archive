@@ -54,28 +54,54 @@
             aria-labelledby="recent-title"
         >
             <div class="recent-heading">
-                <div>
+                
+                <div class="recent-heading-copy">
+
                     <p class="eyebrow">
-                        Fresh from the Archive
+                        Fresh From the Archive
                     </p>
 
                     <h2 id="recent-title">
                         Recently Added
                     </h2>
+
+                    <p class="recent-description">
+                        New pages, unfinished tales,
+                        stories waiting for their chance
+                        to change the world
+                    </p>
+
                 </div>
 
                 <a
                     class="recent-ephemera-link"
                     href="ephemera.html"
                 >
-                    Explore Ephemera →
+                    Explore Ephemera
+                    <span aria-hidden="true"></span>
                 </a>
+
             </div>
 
             <div 
                 class="recent-grid"
                 id="recent-poems"
-            ></div>
+            >
+                <div class="recent-empty">
+
+                    <p class="recent-empty-label">
+                        Awaiting New Entries...
+                    </p>
+
+                    <h3>The shelves are waiting.</h3>
+
+                    <p>
+                        New Poems Here
+                    </p>
+
+                </div>
+            </div>
+            
         </section>
 
         <template id="recent-poem-template">
