@@ -1964,33 +1964,37 @@ body.lightning-impact .poem-page {
     line-height: 1.8;
 }
 
-.recent-ephemera-link {
-    display: inline-flex;
-    align-items: center;
+.recent-heading .recent-ephemera-link {
+    --global-accent: #c43737;
+    --global-accent-dark: #7d2020;
 
-    gap: 16px;
-    padding: 13px 18px;
+    align-self: flex-end;
 
-    border: 1px solid #4a2424;
+    margin-top: 0;
+    padding: 12px 18px;
 
-    color: #ead4d9;
+    color: #ffffff;
 
-    font-size: 0.76rem;
-    letter-spacing: 0.09rem;
-    text-transform: uppercase;
-    text-decoration: none;
-    white-space: nowrap;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: normal;
+
+    letter-spacing: 0.04rem;
+    text-transform: none;
+
+    border: 1px solid var(--global-accent);
+    background: transparent;
 
     transition:
-        background-color 0.3 ease,
-        border-color 0.3s ease,
-        transform 0.3s ease;
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
 }
 
-.recent-ephemera-link:hover {
-    background: rgba(18, 7, 7, 0.92);
-    border-color: #7d2020;
-    transform: translateY(-2px)
+.recent-heading .recent-ephemera-link:hover {
+    background: var(--global-accent-dark);
+    border-color: var(--global-accent);
+    transform: translateY(-2px);
 }
 
 .recent-grid {
@@ -2058,6 +2062,10 @@ body.lightning-impact .poem-page {
         flex-direction: column;
         align-items: flex-start;
         gap: 26px;
+    }
+
+    .recent-heading .recent-ephemera-link {
+        align-self: flex-start;
     }
 
     .recent-grid {
