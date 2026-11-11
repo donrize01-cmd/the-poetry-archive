@@ -2070,3 +2070,114 @@ body.lightning-impact .poem-page {
         padding: 24px;
     }
 }
+
+.recent-poem-card {
+    --entry-acent: #8c3545;
+
+    min-height: 230px;
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid var(--global-line);
+
+    background:
+        linear-gradient(
+            140deg,
+            rgba(140, 53, 69, 0.08),
+            var(--surface) 75%
+        );
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.recent-poem-card.ephemera-entry {
+    --entry-accent: #c43737;
+}
+
+.recent-poem-card.canary-entry {
+    --entry-accent: #c97838;
+}
+
+.recent-poem-card.shattered-entry {
+    --entry-accent: #8c3545;
+}
+
+.recent-poem-card:hover {
+    border-color: var(--entry-accent);
+
+    box-shadow:
+        0 12px 32px rgba(0, 0, 0, 0.25);
+}
+
+.recent-poem-meta {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.recent-poem-collection {
+    color: var(--entry-accent);
+
+    font-size: 0.7rem;
+    letter-spacing: 0.14rem
+}
+
+.recent-poem-status {
+    color: var(--text-muted);
+
+    font-size: 0.65rem;
+    letter-spacing: 0.1rem;
+}
+
+.recent-poem-card h3 {
+    margin: 0 0 12px;
+
+    font-size: 1.7rem;
+    font-weight: normal;
+    line-height: 1.25;
+}
+
+.recent-poem-card h3 a {
+    color: var(--text);
+    text-decoration: none;
+
+    overflow-wrap: anywhere;
+}
+
+.recent-poem-card h3 a:hover {
+    color: var(--entry-accent);
+}
+
+.recent-poem-description {
+    margin: 0 0 26px;
+
+    color: var(--text-soft);
+
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.recent-poem-action {
+    margin-top: auto;
+    align-self: flex-start;
+
+    color: var(--entry-accent);
+
+    font-size: 0.75rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.recent-poem-action:hover {
+    text-decoration: underline;
+}
