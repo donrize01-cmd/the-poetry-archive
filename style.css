@@ -2080,7 +2080,7 @@ body.lightning-impact .poem-page {
 }
 
 .recent-poem-card {
-    --entry-acent: #8c3545;
+    --entry-accent: #8c3545;
 
     min-height: 230px;
     padding: 30px;
@@ -2144,6 +2144,28 @@ body.lightning-impact .poem-page {
 
     font-size: 0.65rem;
     letter-spacing: 0.1rem;
+}
+
+.recent-poem-status.status-new {
+    padding: 6px 11px;
+
+    border: 1px solid rgba(196, 55, 55, 0.65);
+    background: rgba(196, 55, 55, 0.15);
+
+    color: #f0b5b5;
+    font-weight: bold;
+    letter-spacing: 0.12rem;
+}
+
+.recent-poem-status.status-updated {
+    padding: 6px 11px;
+
+    border: 1px solid #66505a;
+    background: rgba(120, 90, 105, 0.15);
+
+    color: #d3bdc6;
+    font-weight: bold;
+    letter-spacing: 0.12rem;
 }
 
 .recent-poem-card h3 {

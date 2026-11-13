@@ -92,7 +92,7 @@
                         </span>
 
                         <span class="recent-poem-status">
-                            ARCHIVE ENTRY
+                            NEW
                         </span>
                     </div>
 
@@ -105,6 +105,10 @@
                     <p class="recent-poem-description">
                         A dinner non-date night
                     </p>
+
+                    <a class="recent-poem-action" href="eph-kiss.html">
+                        Read Poem
+                    </a>
                 </article>
 
                 <article class="recent-poem-card ephemera-entry reveal">
@@ -115,12 +119,16 @@
                         </span>
 
                         <span class="recent-poem-status">
-                            ARCHIVE ENTRY
+                            NEW
                         </span>
                     </div>
 
                     <h3>
-                        <a href="eph-cant-hear-shit.html">
+                        <a 
+                            class="poem-title-link warning-link"
+                            href="eph-cant-hear-shit.html"
+                            data-warning="This poem contains explicit language."
+                        >
                             CAN'T HEAR SHIT IN THE CLUB
                         </a>
                     </h3>
@@ -128,6 +136,14 @@
                     <p class="recent-poem-description">
                         REGRET IS KNOWING I'VE LOST MY WAY
                     </p>
+
+                    <a 
+                        class="recent-poem-action poem-read-link warning-link" 
+                        href="eph-cant-hear-shit.html"
+                        data-warning="This poem contains explicit language"
+                    >
+                        Read Poem
+                    </a>
                 </article>
 
                 <article class="recent-poem-card ephemera-entry reveal">
@@ -138,7 +154,7 @@
                         </span>
 
                         <span class="recent-poem-status">
-                            ARCHIVE ENTRY
+                            NEW
                         </span>
                     </div>
 
@@ -151,6 +167,10 @@
                     <p class="recent-poem-description">
                         I waved goodbye
                     </p>
+
+                    <a class="recent-poem-action" href="eph-my-goodbye.html">
+                        Read Poem
+                    </a>
                 </article>
 
                 <article class="recent-poem-card ephemera-entry reveal">
@@ -161,12 +181,16 @@
                         </span>
 
                         <span class="recent-poem-status">
-                            ARCHIVE ENTRY
+                            NEW
                         </span>
                     </div>
 
                     <h3>
-                        <a href="eph-headshots.html">
+                        <a 
+                            class="poem-title-link warning-link"
+                            href="eph-headshots.html"
+                            data-warning="This poem contains extremely traumatic content."
+                        >
                             Headshots
                         </a>
                     </h3>
@@ -174,6 +198,14 @@
                     <p class="recent-poem-description">
                         They won't leave us alone
                     </p>
+
+                    <a 
+                        class="recent-poem-action poem-read-link warning-link" 
+                        href="eph-cant-hear-shit.html"
+                        data-warning="This poem contains extremely traumatic content"
+                    >
+                        Read Poem
+                    </a>
                 </article>
             </div>
 
@@ -319,6 +351,52 @@
     <footer>
         <p>Written by SMOKE</p>
     </footer>
+
+    <div
+        class="archive-warning-modal"
+        id="archive-warning-modal"
+        aria-hidden="true"
+    >
+        <div
+            class="archive-warning-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="archive-warning-title"
+        >
+            <p class="archive-warning-label">
+                Archive Notice
+            </p>
+
+            <h2 id="archive-warning-title">
+                Mature Content
+            </h2>
+
+            <p
+                class="archive-warning-message"
+                id="archive-warning-message"
+            >
+                This poem contains mature material.
+            </p>
+
+            <div class="archive-warning-actions">
+                <button
+                    class="archive-warning-cancel"
+                    id="archive-warning-cancel"
+                    type="button"
+                >
+                    Return
+                </button>
+
+                <a
+                    class="archive-warning-continue"
+                    id="archive-warning-continue"
+                    href="#"
+                >
+                    Continue Reading
+                </a>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
