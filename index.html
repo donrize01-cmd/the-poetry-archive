@@ -242,20 +242,109 @@
             id="featured-poem"
             aria-labelledby="featured-heading"
         >
-            <div class="featured-heading">
-                <p class="eyebrow">
-                    A closer look...
+            <div class="featured-main">
+
+                <p class="featured-overline">
+                    SELECTED FROM EPHEMERA
                 </p>
 
-                <h2 href="eph-songbird.html">
-                    Songbird
+                <h3>Songbird</h3>
+
+                <p class="featured-excerpt">
+                    "The Songbird is soaring in the trees"
+                </p>
+
+                <a
+                    class="collection-link featured-action"
+                    href="eph-songbird.html"
+                >
+                    Read Featured Poem
+                </a>
+
+            </div>
+        </section>
+
+        <section
+            class="surprise-section"
+            id="surprise-me"
+            aria-labelledby="surprise-heading"
+        >
+            <div class="surprise-intro">
+
+                <p class="eyebrow">
+                    An unexpected page
+                </p>
+
+                <h2 id="surprise-heading">
+                    It's up to Fate...
                 </h2>
 
-                <p>
-                    A poem handpicked off the shelves 
-                    of the Archive
+                <p class="surprise-description">
+                    Some stories are found<br>
+                    Others find you
                 </p>
 
+                <button
+                    class="surprise-button"
+                    id="surprise-button"
+                    type="button"
+                >
+                    Surprise Me
+                </button>
+
+                <p
+                    class="surprise-status"
+                    id="surprise-status"
+                    role="status"
+                    aria-live="polite"
+                ></p>
+
+            </div>
+
+            <div
+                class="surprise-result"
+                id="surprise-result"
+                hidden
+            >  
+                <p class="surprise-result-label">
+                    Fate has found a page for you
+                </p>
+
+                <h3
+                    id="surprise-poem-title"
+                    tabindex="-1"
+                ></h3>
+
+                <p
+                    class="surprise-collection"
+                    id="surprise-collection"
+                ></p>
+
+                <p
+                    class="surprise-warning"
+                    id="surprise-warning"
+                    hidden
+                ></p>
+
+                <div class="surprise-actions">
+
+                    <a
+                        class="collection-link surprise-read"
+                        id="surprise-read"
+                        href="#"
+                    >
+                        Read this poem?    
+                    </a>
+
+                    <button
+                        class="surprise-again"
+                        id="surprise-again"
+                        type="button"
+                    >
+                        Try another?
+                    </button>
+
+                </div>
             </div>
         </section>
 
@@ -421,5 +510,6 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="surprise.js"></script>
 </body>
 </html>
