@@ -1,5 +1,5 @@
 (() => {
-    "use-strict";
+    "use strict";
 
     const pickButton =
         document.getElementById("surprise-button");
@@ -74,12 +74,12 @@
         },
         {
             title: "Intro III",
-            href: "shc-v3-01-intro-3-html",
+            href: "shc-v3-01-intro-3.html",
             collection: "Shattered Hearts - ENCHANTINGS"
         },
         {
             title: "Desire",
-            href: "href-shc-v3-02-desire.html",
+            href: "shc-v3-02-desire.html",
             collection: "Shattered Hearts - ENCHANTINGS"
         },
         {
@@ -206,7 +206,7 @@
                 throw new Error("No poems available");
             }
 
-            const alternative = poems.filter(
+            const alternatives = poems.filter(
                 (poem) => poem.href !== selectedPoem?.href
             );
 
