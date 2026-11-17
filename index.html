@@ -272,25 +272,79 @@
             <div class="surprise-intro">
 
                 <p class="eyebrow">
-                    An unexpected page
+                    An Unexpected Page
                 </p>
 
-                <a
-                    class="collection-link featured-action"
-                    href="eph-songbird.html"
+                <h2 id="surprise-heading">
+                    Leave It to Fate.
+                </h2>
+
+                <p class="surprise-description">
+                    Some stories are found.
+                    Others find you.
+                </p>
+
+                <button
+                    class="surprise-button"
+                    id="surprise-button"
+                    type="button"
                 >
-                    Read Featured Poem
-                </a>
+                    Surprise Me ↗
+                </button>
+
+                <p
+                    class="surprise-status"
+                    id="surprise-status"
+                    role="status"
+                    aria-live="polite"
+                ></p>
 
             </div>
 
-            <div class="featured-side" aria-hidden="true">
-
-                <p>
-                    A poem handpicked off the shelves 
-                    of the Archive
+            <div
+                class="surprise-result"
+                id="surprise-result"
+                hidden
+            >
+                <p class="surprise-result-label">
+                    A Page Has Been Found
                 </p>
 
+                <h3
+                    id="surprise-poem-title"
+                    tabindex="-1"
+                ></h3>
+
+                <p
+                    class="surprise-collection"
+                    id="surprise-collection"
+                ></p>
+
+                <p
+                    class="surprise-warning"
+                    id="surprise-warning"
+                    hidden
+                ></p>
+
+                <div class="surprise-actions">
+
+                    <a
+                        class="collection-link surprise-read"
+                        id="surprise-read"
+                        href="#"
+                    >
+                        Read This Poem
+                    </a>
+
+                    <button
+                        class="surprise-again"
+                        id="surprise-again"
+                        type="button"
+                    >
+                        Try Another ↻
+                    </button>
+
+                </div>
             </div>
         </section>
 
