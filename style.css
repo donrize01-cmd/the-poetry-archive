@@ -1965,9 +1965,9 @@ body.lightning-impact .poem-page {
     line-height: 1.8;
 }
 
-.recent-heading .recent-ephemera-link {
-    --global-accent: #c43737;
-    --global-accent-dark: #7d2020;
+.recent-heading .recent-affection-link {
+    --global-accent: #d98ba8;
+    --global-accent-dark: #8e4c67;
 
     align-self: flex-end;
 
@@ -1992,7 +1992,7 @@ body.lightning-impact .poem-page {
         transform 0.25s ease;
 }
 
-.recent-heading .recent-ephemera-link:hover {
+.recent-heading .recent-affection-link:hover {
     background: var(--global-accent-dark);
     border-color: var(--global-accent);
     transform: translateY(-2px);
@@ -2065,7 +2065,7 @@ body.lightning-impact .poem-page {
         gap: 26px;
     }
 
-    .recent-heading .recent-ephemera-link {
+    .recent-heading .recent-affection-link {
         align-self: flex-start;
     }
 
@@ -2115,6 +2115,19 @@ body.lightning-impact .poem-page {
 
 .recent-poem-card.shattered-entry {
     --entry-accent: #8c3545;
+}
+
+.recent-poem-card.affection-entry {
+    --entry-accent: #d98ba8;
+}
+
+
+.recent-poem-card.affection-entry .status-new {
+    color: #edb9cb;
+
+    border-color: rgba(217, 139, 168, 0.65);
+
+    background: rgba(217, 139, 168, 0.65)
 }
 
 .recent-poem-card:hover {
@@ -2730,3 +2743,164 @@ body.lightning-impact .poem-page {
     border-color: #edb9cb;
     box-shadow: 0 0 18px rgba(217, 139, 168, 0.22);
 } 
+
+/* =========================
+   ARCHIVE CHANGELOG
+========================= */
+
+.archive-changelog {
+    margin: 100px 0 0;
+    padding: 42px 0 0;
+
+    border-top: 1px solid var(--global-line);
+}
+
+.changelog-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    gap: 30px;
+}
+
+.changelog-heading .eyebrow {
+    color: #c68191;
+    font-size: 0.75rem;
+    letter-spacing: 0.22rem;
+}
+
+.changelog-heading h2 {
+    margin: 12px 0 16px;
+
+    font-size: clamp(2.2rem, 4vw, 3.3rem);
+    font-weight: normal;
+}
+
+.changelog-description {
+    max-width: 550px;
+    margin: 0;
+
+    color: var(--text-soft);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.changelog-version {
+    margin: 0;
+
+    color: #aa7c8b;
+
+    font-size: 0.7rem;
+    letter-spacing: 0.12rem;
+    white-space: nowrap;
+}
+
+.changelog-list {
+    list-style: none;
+    margin: 38px 0 0;
+    padding: 0;
+
+    border-top: 1px solid var(--global-line);
+}
+
+.changelog-entry {
+    display: grid;
+    grid-template-columns: 140px minmax(0, 1fr);
+
+    gap: 32px;
+    padding: 30px 0;
+
+    border-bottom: 1px solid var(--global-line);
+}
+
+.changelog-entry time {
+    padding-top: 4px;
+
+    color: var(--text-muted);
+
+    font-size: 0.72rem;
+    letter-spacing: 0.12rem;
+}
+
+.changelog-details {
+    min-width: 0;
+}
+
+.changelog-type {
+    margin: 0 0 10px;
+
+    color: #c68191;
+
+    font-size: 0.7rem;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+}
+
+.changelog-details h3 {
+    margin: 0 0 12px;
+
+    color: var(--text);
+
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+.changelog-details > p:not(.changelog-type) {
+    max-width: 650px;
+    margin: 0 0 15px;
+
+    color: var(--text-soft);
+
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+.changelog-details a {
+    display: inline-block;
+
+    color: #d29aaa;
+
+    font-size: 0.82rem;
+    text-decoration: none;
+
+    transition: color 0.25s ease;
+}
+
+.changelog-details a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+.changelog-details a:focus-visible {
+    outline: 2px solid #e3a1b5;
+    outline-offset: 5px
+}
+
+@media (max-width: 760px) {
+    .archive-changelog {
+        margin-top: 75px;
+        padding-top: 35px;
+    }
+
+    .changelog-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .changelog-version {
+        white-space: normal;
+    }
+
+    .changelog-entry {
+        grid-template-columns: 1fr;
+        gap: 10px;
+
+        padding: 25px 0;
+    }
+
+    .changelog-details h3 {
+        font-size: 1.3rem;
+    }
+}
