@@ -54,6 +54,10 @@
             path: "ephemera.html",
             label: "Ephemera"
         },
+        {
+            path: "short-collection-affection.html",
+            label: "A Short Collection for my Affection"
+        }
     ];
 
     const fallbackPoems = [
